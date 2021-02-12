@@ -19,7 +19,6 @@ export class DialogComponent implements OnInit {
 
   ngOnInit() {
     this.userGroup = this.createFormGroup(this.data);
-    console.log(this.mode)
   }
 
   checkIfItemIsObject(item): boolean {
@@ -51,7 +50,6 @@ export class DialogComponent implements OnInit {
   }
 
   sendDataToParent(){
-    console.log(this.mode)
     if(this.mode == "create"){
       this.formValue.emit(this.userGroup.value)
     }else{

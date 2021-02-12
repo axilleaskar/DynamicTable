@@ -69,7 +69,6 @@ export class HomeComponent implements OnInit {
   }
 
   addNewItem(event) {
-    console.log(event);
     this.items.push(event);
     this.refreshValues();
     this.collectionSize = this.items.length;

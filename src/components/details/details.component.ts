@@ -13,12 +13,10 @@ export class DetailsComponent implements OnInit {
   constructor(private globalService: GlobalService, private router: Router) {}
 
   ngOnInit() {
-    console.log(this.item)
     if (this.item) {
       this.getDetails(this.item);
     } else {
       this.globalService.item.subscribe((resp) => {
-        console.log(resp);
         if (resp) {
           this.item = resp;
           this.getDetails(this.item);

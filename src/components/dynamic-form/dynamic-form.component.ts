@@ -15,7 +15,6 @@ export class DynamicFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    // console.log(this.group.controls)
     this.controls = Object.entries(this.group.controls)
 
   }
