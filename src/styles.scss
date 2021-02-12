@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background-color: #e0eef0;
+}
+html{
+  background-color: #e0eef0;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #268694;
+  border-color: #268694;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color:#005464;
+  border-color: #005464;
+}
+.btn-primary:focus {
+  background-color:#005464;
+  border-color: #005464;
+}
+.btn:focus,.btn:active {
+  outline: #80b8c0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #4d9ca7;
+}
+.form-control:focus {
+  border-color: #80b8c0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #4d9ca7;
+}

@@ -1,0 +1,9 @@
+
+<!-- <app-dynamic-form *ngIf="!isFormGroup(this.formGroup)"></app-dynamic-form> -->
+
+<div *ngFor="let item of controls">
+  <app-dynamic-form *ngIf="isFormGroup(item[1])" [group]="item[1]"></app-dynamic-form>
+  <div class="input-group mb-3" *ngIf="!isFormGroup(item[1])" [formGroup]="group">
+    <input type="text" class="form-control" [placeholder]="item[0]" [formControlName]="item[0]" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+</div>

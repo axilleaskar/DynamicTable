@@ -1,0 +1,41 @@
+.card {
+  margin-top: 50px;
+  // margin-left: 50px;
+  // margin-right: 50px;
+  // min-width: 500px;
+  padding-left: 20px;
+  padding-right: 40px;
+  width: max-content;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:   #005e6e;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color:#005464;
+}
+
+.active {
+  background-color:  #268694;
+}
+

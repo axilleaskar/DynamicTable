@@ -1,0 +1,46 @@
+<div class="home-container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <button class="btn btn-primary space" *ngIf="this.items.length > 0"  data-toggle="modal" data-target="#exampleModal" (click)="changeMode('create')">Create New</button>
+      </tr>
+      <tr>
+        <th scope="col" *ngFor="let col of columns">{{ col }}</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of displayedItems;let index=index">
+        <td *ngFor="let value of getValues(item)">
+          <span *ngIf="!checkIfItemIsObject(value)">{{ value }}</span>
+        </td>
+        <td>
+          <button class="btn btn-danger btn-sm action-buttons" (click)="deleteItem(index)">
+            <span class="material-icons">delete</span>
+          </button>
+          <button class="btn btn-info btn-sm action-buttons" data-toggle="modal" data-target="#exampleModal" (click)="changeMode('edit', index)">
+            <span class="material-icons">edit</span>
+          </button>
+          <button class="btn btn-secondary btn-sm action-buttons" [routerLink]="'details/' + item.id" (click)="getSingleItem(this.items[index])">
+            <span class="material-icons" >info</span>
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshValues()">
+    </ngb-pagination>
+
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshValues()">
+      <option [ngValue]="10">10 items per page</option>
+      <option [ngValue]="30">30 items per page</option>
+      <option [ngValue]="100">100 items per page</option>
+    </select>
+  </div>
+</div>
+
+<app-dialog [data]="this.items[0]" [mode]="mode" *ngIf="this.items.length > 0" (formValueEdit)="editItem($event)" (formValue)="addNewItem($event)"></app-dialog>
+

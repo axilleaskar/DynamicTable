@@ -1,0 +1,27 @@
+<div class="login-form">
+  <form [formGroup]="userForm">
+    <div class="input-group mb-3">
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <input
+        formControlName="password"
+        type="text"
+        class="form-control"
+        placeholder="Password"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+  </form>
+
+  <button type="button" class="btn btn-primary" (click)="login()">Login</button>
+</div>
