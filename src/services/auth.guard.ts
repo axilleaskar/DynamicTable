@@ -23,7 +23,6 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-      console.log("eeeeee", localStorage.getItem("username"))
     if (localStorage.getItem("username") != null) {
       return true;
     } else {
