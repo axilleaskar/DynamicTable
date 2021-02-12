@@ -1,11 +1,13 @@
 .card {
+  position: absolute;
+  // width: ;
   margin-top: 50px;
   // margin-left: 50px;
   // margin-right: 50px;
   // min-width: 500px;
   padding-left: 20px;
   padding-right: 40px;
-  width: max-content;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
 }
